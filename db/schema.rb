@@ -20,11 +20,10 @@ ActiveRecord::Schema.define(version: 2020_06_27_005245) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "project_id", null: false
+    t.integer "project_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["project_id"], name: "index_tasks_on_project_id"
   end
 
-  add_foreign_key "tasks", "projects"
 end

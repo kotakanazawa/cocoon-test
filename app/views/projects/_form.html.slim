@@ -9,4 +9,11 @@
   .field
     = f.label :name
     = f.text_field :name
-  .actions = f.submit
+  h3 Tasks
+  #tasks.field
+    = f.fields_for :tasks do |task|
+      = render 'task_fields', f: task
+    .links
+      = link_to_add_association 'add task', f, :tasks
+  .actions
+    = f.submit

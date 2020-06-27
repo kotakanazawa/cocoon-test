@@ -1,8 +1,14 @@
 p#notice = notice
 
+h2 Projects
 p
   strong Name:
   = @project.name
+
+h2 Tasks
+ul
+  - @project.tasks.each do |task|
+    li = task.name
 
 => link_to 'Edit', edit_project_path(@project)
 '|
